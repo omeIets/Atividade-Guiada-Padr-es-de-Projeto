@@ -1,4 +1,5 @@
-package techlearn;
+package techlearn.iterator;
+import techlearn.composite.ComponenteCatalogo;
 import java.util.List;
 
 public class ModuloIterator implements Iterator<ComponenteCatalogo> {

@@ -1,4 +1,5 @@
-package techlearn;
+package techlearn.composite;
+import techlearn.iterator.Iterator;
 
 public abstract class ComponenteCatalogo {
     public void adicionar(ComponenteCatalogo componente) {

@@ -1,4 +1,7 @@
-package techlearn;
+package techlearn.composite;
+
+import techlearn.iterator.Iterator;
+import techlearn.iterator.NullIterator;
 
 public class Aula extends ComponenteCatalogo {
     private String nome;
