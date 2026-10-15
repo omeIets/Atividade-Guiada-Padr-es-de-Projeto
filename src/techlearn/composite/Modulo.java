@@ -18,21 +18,18 @@ public class Modulo extends ComponenteCatalogo {
     @Override
     public void adicionar(ComponenteCatalogo componente) {
         subComponentes.add(componente);
-        LoggerService.getInstance().log("Item '" +
-
-                componente.getNome() + "' adicionado ao módulo '" + this.nome + "'.");
+        LoggerService.getInstance().log("Item '" + componente.getNome() + "' adicionado ao módulo '" + this.nome + "'.");
     }
     @Override
     public void remover(ComponenteCatalogo componente) {
         subComponentes.remove(componente);
-        LoggerService.getInstance().log("Item '" +
-
-                componente.getNome() + "' removido do módulo '" + this.nome + "'.");
+        LoggerService.getInstance().log("Item '" + componente.getNome() + "' removido do módulo '" + this.nome + "'.");
     }
     @Override
     public String getNome() {
         return nome;
     }
+
     @Override
     public int getDuracaoMinutos() {
         int total = 0;
@@ -53,6 +50,7 @@ public class Modulo extends ComponenteCatalogo {
     public List<ComponenteCatalogo> getSubComponentes() {
         return subComponentes;
     }
+
     @Override
     public Iterator<ComponenteCatalogo> criarIterator() {
         return new ModuloIterator(subComponentes);

@@ -11,20 +11,22 @@ public class Aula extends ComponenteCatalogo {
         this.nome = nome;
         this.duracaoMinutos = duracaoMinutos;
     }
+
     @Override
     public String getNome() {
         return nome;
     }
+
     @Override
     public int getDuracaoMinutos() {
         return duracaoMinutos;
     }
+
     @Override
     public void exibirDetalhes() {
-        System.out.println(" - Aula: " + getNome() + " (" +
-
-                getDuracaoMinutos() + " min)");
+        System.out.println(" - Aula: " + getNome() + " (" + getDuracaoMinutos() + " min)");
     }
+
     @Override
     public Iterator<ComponenteCatalogo> criarIterator() {
         return new NullIterator<>();

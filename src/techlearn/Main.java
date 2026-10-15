@@ -26,7 +26,6 @@ public class Main {
         cursoEngenharia.exibirDetalhes();
 
         System.out.println("\n===================================================");
-
         System.out.println(" Varredura do Curso Principal via Iterator:");
         System.out.println("==================================================");
 
@@ -36,6 +35,26 @@ public class Main {
             logger.log("Navegando no Item Raiz: " + subItem.getNome() + " | Duração acumulada: " + subItem.getDuracaoMinutos() + " min");
         }
 
-        logger.log("Execução da atividade finalizada.");
+        System.out.println("\n===================================================");
+        System.out.println(" Varredura do Curso Usando Filtro:");
+        System.out.println("==================================================");
+        filtrarAulasCurtas(cursoEngenharia);
+
+        logger.log("\nExecução da atividade finalizada.");
+    }
+
+    public static void filtrarAulasCurtas(ComponenteCatalogo componente) {
+        // realiza o filtro de fato
+        if (componente instanceof Aula && componente.getDuracaoMinutos() <= 45) {
+            componente.exibirDetalhes();
+        }
+
+        // iterator para ver se tem filho, se tiver chama funcao recursivamente
+        Iterator<ComponenteCatalogo> iterator = componente.criarIterator();
+
+        while (iterator.hasNext()) {
+            ComponenteCatalogo subItem = iterator.next();
+            filtrarAulasCurtas(subItem);
+        }
     }
 }
